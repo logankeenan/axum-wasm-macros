@@ -5,7 +5,7 @@ edition = "2021"
 rust-version = "1.63"
 authors = ["Logan Keenan"]
 description = "A macro to enable compabatility between Axum and and WASM"
-repository = "https://github.com/logankeenan/axum-cloudflare-adapter"
+repository = "https://github.com/logankeenan/axum-wasm-macros"
 license = "MIT"
 keywords = ["Axum", "WASM", "Cloudflare", "browser"]
 
