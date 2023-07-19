@@ -1,0 +1,33 @@
+[package]
+name = "axum-wasm-macros"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.63"
+authors = ["Logan Keenan"]
+description = "A macro to enable compabatility between Axum and and WASM"
+repository = "https://github.com/logankeenan/axum-cloudflare-adapter"
+license = "MIT"
+keywords = ["Axum", "WASM", "Cloudflare", "browser"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0.26"
+syn = { version = "2.0.15", features = ["full"] }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.34"
+wasm-bindgen-futures = "0.4.34"
+wasm-bindgen = "0.2.84"
+oneshot = "0.1.5"
+axum = { version = "0.6.19", default-features = false }
+tower-service = "0.3.2"
+
+reqwest = { version = "0.11.18", default-features = false, features = ["rustls-tls"] }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+
